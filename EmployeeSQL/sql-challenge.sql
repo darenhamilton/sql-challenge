@@ -36,15 +36,15 @@ CREATE TABLE IF NOT EXISTS titles
 
 CREATE TABLE IF NOT EXISTS dept_managers
 (
-    dept_no VARCHAR(50) NOT NULL UNIQUE,
+    dept_no VARCHAR(50) NOT NULL,
     emp_no VARCHAR(10) NOT NULL UNIQUE,
-    PRIMARY KEY(dept_no, emp_no)
+    PRIMARY KEY(emp_no)
 );
 
 CREATE TABLE IF NOT EXISTS dept_emps
 (
-    emp_no VARCHAR(10) NOT NULL UNIQUE,
-    dept_no VARCHAR(10) NOT NULL UNIQUE,
+    emp_no VARCHAR(10) NOT NULL,
+    dept_no VARCHAR(10) NOT NULL,
     PRIMARY KEY(emp_no, dept_no)
 );
 
@@ -143,6 +143,12 @@ ALTER TABLE dept_managers
 ALTER TABLE departments
     ADD    FOREIGN KEY (dept_no)
     REFERENCES employees(employee_title_id)
+    MATCH SIMPLE
+;
+    
+ALTER TABLE dept_managers
+    ADD    FOREIGN KEY (emp_no)
+    REFERENCES departments(dept_no)
     MATCH SIMPLE
 ;
     
