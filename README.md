@@ -21,6 +21,8 @@ Step 3 - Import the csvs in the data folder in the following order:
     - titles
     - dept_managers
     - dept_emps
+   
+Step 4 - Run the remainder of the schemas.sql lines
 
 Requested queries can be run from query.sql
 
