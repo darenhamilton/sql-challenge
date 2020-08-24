@@ -24,4 +24,4 @@ Step 3 - Import the csvs in the data folder in the following order:
 
 Requested queries can be run from query.sql
 
-I suspect that April Foolsday not a real empoyee.
+I suspect that April Foolsday not a real employee.
