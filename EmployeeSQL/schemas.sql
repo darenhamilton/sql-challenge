@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS dept_managers
 (
     dept_no VARCHAR(10) NOT NULL,
     emp_no INTEGER NOT NULL,
-    PRIMARY KEY(dept_no, emp_no, emp_no)
+    PRIMARY KEY(dept_no, emp_no)
 );
 
 CREATE TABLE IF NOT EXISTS dept_emps
@@ -45,14 +45,10 @@ CREATE TABLE IF NOT EXISTS dept_emps
     PRIMARY KEY(emp_no, dept_no)
 );
 
--- At this point I was able to add all the csv's. Starting with departments, employees, salaries, titles, dept_managers, dept_emps
+-- At this point I was able to import all the csv's. Starting with departments, employees, salaries, titles, dept_managers, dept_emps
 -- Create FKs
       
-ALTER TABLE salaries
-    ADD    FOREIGN KEY (salary)
-    REFERENCES titles(title_id)
-    MATCH SIMPLE
-;
+
     
 ALTER TABLE dept_emps
     ADD    FOREIGN KEY (dept_no)

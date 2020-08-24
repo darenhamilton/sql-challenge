@@ -14,7 +14,7 @@ employees.emp_no = salaries.emp_no;
 
 SELECT first_name, last_name, hire_date
 FROM employees
-WHERE hire_date >= '1989-01-01' AND hire_date < '1990-01-01'
+WHERE hire_date >= '1989-01-01' AND hire_date < '1990-01-01';
 
 
 --List the manager of each department with the following information: 
@@ -30,7 +30,7 @@ FROM dept_managers m
 JOIN employees e
 	ON m.emp_no = e.emp_no
 JOIN departments d
-	ON m.dept_no = d.dept_no
+	ON m.dept_no = d.dept_no;
 	
 --List the department of each employee with the following information: 
 	--employee number, last name, first name, and department name
@@ -44,14 +44,14 @@ FROM dept_emps x
 JOIN employees e
 	ON x.emp_no = e.emp_no
 JOIN departments d
-	ON x.dept_no = d.dept_no
+	ON x.dept_no = d.dept_no;
 
 
   --List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
 SELECT first_name, last_name, sex
 FROM employees
-WHERE last_name LIKE 'B%' AND first_name = 'Hercules'
+WHERE last_name LIKE 'B%' AND first_name = 'Hercules';
 
 
 --List all employees in the Sales department, including their 
@@ -67,7 +67,7 @@ JOIN employees e
 	ON x.emp_no = e.emp_no
 JOIN departments d
 	ON x.dept_no = d.dept_no
-WHERE d.dept_nam = 'Sales'	
+WHERE d.dept_nam = 'Sales';	
 
   
  --List all employees in the Sales and Development departments, 
@@ -83,7 +83,7 @@ JOIN employees e
 	ON x.emp_no = e.emp_no
 JOIN departments d
 	ON x.dept_no = d.dept_no
-WHERE d.dept_nam IN ('Sales', 'Development')	
+WHERE d.dept_nam IN ('Sales', 'Development');	
  
 
  --In descending order, list the frequency count of employee last names,
@@ -94,11 +94,11 @@ SELECT
 	COUNT(*) AS total
 FROM employees
 GROUP BY last_name
-ORDER BY total DESC
+ORDER BY total DESC;
 
 
 --It looks like Foolsday might be me
 
 SELECT *
 FROM employees
-WHERE last_name = 'Foolsday'
+WHERE last_name = 'Foolsday';
